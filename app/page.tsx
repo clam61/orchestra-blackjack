@@ -209,14 +209,14 @@ export default function Home() {
   }, [playerValue])
 
   return (
-    <main className="text-white min-h-screen justify-center items-center flex flex-col bg-[#4E6A54] ">
+    <main className="p-4 text-white min-h-screen justify-center items-center justify-start flex flex-col bg-[#4E6A54]">
       <div className="text-3xl font-bold">Blackjack</div>
       {houseCards.length > 0 &&
       <div className="mt-4">
         <div className="text-yellow-200">House: {houseValue}</div>
         <div className="flex justify-center">{displayHand(houseCards)}</div>
         <div className="text-yellow-200 mt-8">Player: {playerValue}</div>
-        <div className="flex justify-center">{displayHand(playerCards)}</div>
+        <div className="flex flex-wrap justify-center">{displayHand(playerCards)}</div>
         <div className="mt-4 flex flex-row gap-4 justify-center items-center">
           {!gameOver && 
           <>
