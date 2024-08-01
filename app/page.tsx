@@ -181,16 +181,15 @@ export default function Home() {
 
   // stand for the user
   const stand = () => {
-    // if the player won
+    // the stand button does not appear if the player busted, so we can assume the user 
+    // right now has a value of 21 or less
+    
+    // if the player has a score higher than the house, the user won
     if (playerValue > houseValue) {
       toast.success('Congratulations, you win!')
     }
-    // if the player pushed
-    else if (playerValue == houseValue) {
-      toast.success('It\'s a push')
-    }
-    // if the player lost
-    else {
+    // if the player has a score equal to or less than the house, it is considered a loss
+    else if (playerValue <= houseValue) {
       toast.error('Sorry, you lost.')
     }
 
@@ -205,7 +204,7 @@ export default function Home() {
       setGameOver(true)
 
       // show player lost
-      toast.error('Sorry, you lost.')
+      toast.error('Bust. Sorry, you lost.')
     }
   }, [playerValue])
 
