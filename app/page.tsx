@@ -191,7 +191,7 @@ export default function Home() {
     }
     // if the player lost
     else {
-      toast.error('Sorry, you lost.', '#ff0000')
+      toast.error('Sorry, you lost.')
     }
 
     setGameOver(true)
